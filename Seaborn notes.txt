@@ -1,0 +1,58 @@
+Seaborn
+
+1.sns.load_dataset
+2.sns.get_dataset_names()
+3.#For numerical features
+sns.histplot(df[''],color='')
+4.sns.distplot(df[''],color='')[line is called kernal density estimator which is used to perform the smoothening of function].
+5.sns.distplot(df[''],color='',kde=false)[kde=false ,means line will not be generated]
+6.#Scatterplot in seaborn
+sns.scatterplot(x=df[''],y=df[''],color='red')
+7.relpotfunction in seaborn:It is used to plot the relationship between two datasets on x and y axis.
+hue=It is a kind of a grouping variable.
+size=This will produce elements with different sizes. It is also a grouping variable.
+style=It will produce elements with different colors
+pallete=It is used to set the color tone for  the mapping.
+data=datframe
+
+sns.relplot(x=df[''],y=df[''],data=tips,hue='smoker')
+sns.relplot(x=df[''],y=df[''],data=tips,style='size')
+sns.relplot(x=df[''],y=df[''],data=tips,style='size',hue='time')
+
+#Barplot for categorical features
+8.sns.catplot(x='day',y='time',data=tips)
+sns.barplot(x='day',y='time',data=tips)
+
+#jointplot
+sns.jointplot(x=df[''],y=df[''])
+sns.jointplot(x=df[''],y=df[''],kind='reg')[A bestfit type of line will be drawn here]
+sns.jointplot(x=df[''],y=df[''],kind='hex')
+sns.jointplot(x=df[''],y=df[''],kind='kde')#contour used in meterological department
+
+#Pairplot
+9.It will plot pairwise relations in a dataframe
+sns.pairplot(tips)
+sns.pairplot(tips,hue='smoker')
+
+#Boxplot:It is used for detecting outliers(outliers:means unwanted data or extreme data example:1,2,3,4,5,1000 here 1000 is the outlier)
+10.sns.boxplot(df[''])
+sns.boxplot(tips,orient='h')[horizontalplotting]
+
+#correlation:to understand the relationship between 2 features
+sns.heatmap(tips,df.corr(),annot=True,cmap='coolwarm')
+
+11.sns.countplot(x='sex',data=tips)
+12.sns.lmplot(x='',y='',data=tips)[gives a regression line]
+
+#pie chart using matplotlib
+my_explode=(0.0,0.1.1.0)
+13.langs=['C','C++','Python']
+subject=[10,20,30]
+plt.pie(subjects,labels=langs,autopct='%1.1f',explode=my_explode,shadow=True)
+plt.title("pie chart")
+plt.show()
+
+14.violinplot:#used for outliers
+plt.violinplot(df[''])
+
+plt.show()
